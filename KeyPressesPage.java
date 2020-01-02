@@ -11,18 +11,22 @@ public class KeyPressesPage {
     private By resultText = By.id("result");
 
     public KeyPressesPage(WebDriver driver){
+
         this.driver = driver;
     }
 
     public void enterText(String text){
+
         driver.findElement(inputField).sendKeys(text);
     }
 
     public String getResult(){
+
         return driver.findElement(resultText).getText();
     }
 
     public void enterPi(){
+
         enterText(Keys.chord(Keys.ALT, "p") + "= 3.14");
     }
 }
