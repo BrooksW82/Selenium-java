@@ -1,0 +1,17 @@
+package slider;
+
+import base.BaseTests;
+import org.testng.annotations.Test;
+
+import static org.testng.Assert.assertEquals;
+
+public class SliderTest extends BaseTests {
+
+    @Test
+    public void testSlider(){
+        var sliderPage = homePage.clickHorizontalSlider();
+
+        sliderPage.setSlider(4);
+        assertEquals(sliderPage.getValue(), "4");
+    }
+}
