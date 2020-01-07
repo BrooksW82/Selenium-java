@@ -7,6 +7,7 @@ public class DynamicLoadingPage {
 
     private WebDriver driver;
     private By link_Example1 = By.xpath("//*[@id=\"content\"]/div/a[1]");
+    private By link_Example2 = By.xpath("//*[@id=\"content\"]/div/a[2]");
 
     public DynamicLoadingPage(WebDriver driver){
         this.driver = driver;
@@ -17,5 +18,9 @@ public class DynamicLoadingPage {
         return new DynamicLoadingExample1Page(driver);
     }
 
+    public DynamicLoadingExample2Page clickExample2(){
+        driver.findElement(link_Example2).click();
+        return new DynamicLoadingExample2Page(driver);
+    }
 
 }
