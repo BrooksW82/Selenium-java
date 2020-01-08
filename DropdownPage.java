@@ -32,4 +32,9 @@ public class DropdownPage {
     }
 
 
+    public void selectMultipleOptions(){
+        
+    }
 }
+
+
