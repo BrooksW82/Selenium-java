@@ -11,18 +11,24 @@ public class DynamicLoadingExample2Page {
     private By startButton = By.cssSelector("#start > button");
     private By loadedText = By.id("finish");
 
-    public DynamicLoadingExample2Page(WebDriver driver){
+    public DynamicLoadingExample2Page(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void clickStart(){
+    public void clickStart() {
         driver.findElement(startButton).click();
         WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.presenceOfElementLocated(loadedText));
     }
 
-    public String getLoadedText(){
+    public String getLoadedText() {
         return driver.findElement(loadedText).getText();
     }
 
+    public boolean isStartButtonDisplayed() {
+        if (driver.findElement(startButton).isDisplayed()) {
+            return true;
+        }
+        return false;
+    }
 }
