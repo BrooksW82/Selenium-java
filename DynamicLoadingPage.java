@@ -23,4 +23,8 @@ public class DynamicLoadingPage {
         return new DynamicLoadingExample2Page(driver);
     }
 
+    public openExample2InNewTab(){
+        
+    }
+
 }
